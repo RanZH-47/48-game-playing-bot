@@ -1,6 +1,7 @@
 # on wikpedia page,
 # test case 1: find how many articles are in English in total
 import pytest
+
 import constants
 from web_driver.wikipedia import Wikipedia
 

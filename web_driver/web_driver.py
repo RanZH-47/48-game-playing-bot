@@ -1,9 +1,10 @@
-import constants
-
-from typing import Union
 from pathlib import Path
+from typing import Union
+
 from selenium import webdriver
 from selenium.webdriver.common.service import Service
+
+import constants
 
 
 class WebDriver:

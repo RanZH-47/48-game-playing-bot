@@ -1,10 +1,12 @@
 import time
-from web_driver.web_driver import WebDriver
-from web_driver.utils import Utils
+
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
+from web_driver.utils import Utils
+from web_driver.web_driver import WebDriver
 
 
 class Cookie:
@@ -14,18 +16,20 @@ class Cookie:
     def select_language(self, web_driver, langauge_code: str):
         wait = WebDriverWait(web_driver, 10)
         wait.until(EC.invisibility_of_element_located((By.CSS_SELECTOR, "#loading")))
-        
+
         langauge_option = web_driver.find_element(
-            by=By.CSS_SELECTOR, value= "#langSelect-" + langauge_code
+            by=By.CSS_SELECTOR, value="#langSelect-" + langauge_code
         )
         langauge_option.click()
         # handle loading screen
 
         wait = WebDriverWait(web_driver, 10)
         wait.until(EC.presence_of_element_located((By.ID, "cookieAnchor")))
-    
+
     def get_cost(self, web_driver) -> float:
-        cookie_amount = web_driver.find_element(by=By.CSS_SELECTOR, value="#cookies").text
+        cookie_amount = web_driver.find_element(
+            by=By.CSS_SELECTOR, value="#cookies"
+        ).text
         return Utils.extract_number(cookie_amount)
 
     def click_cookie(self, langauge_code: str):
@@ -42,7 +46,9 @@ class Cookie:
             cookie.click()
             if time.time() > timeout:
                 try:
-                    store_options = web_driver.find_elements(by=By.CSS_SELECTOR, value="div[id^='product'] .enabled")
+                    store_options = web_driver.find_elements(
+                        by=By.CSS_SELECTOR, value="div[id^='product'] .enabled"
+                    )
                     store_options[-1].click()
                     timeout = time.time() + 1
 
@@ -50,4 +56,4 @@ class Cookie:
                     cookie.click()
             if time.time() > t_end:
                 break
-        return web_driver        
+        return web_driver

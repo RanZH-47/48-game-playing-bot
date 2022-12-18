@@ -14,4 +14,4 @@
 
 # def test_click_cookie():
 #     web_driver = Cookie(constants.COOKIE_URL).click_cookie("EN")
-#     web_driver.close() 
+#     web_driver.close()

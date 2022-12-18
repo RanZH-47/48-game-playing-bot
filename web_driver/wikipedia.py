@@ -1,8 +1,9 @@
-import constants
-from web_driver.web_driver import WebDriver
-from web_driver.utils import Utils
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+
+import constants
+from web_driver.utils import Utils
+from web_driver.web_driver import WebDriver
 
 
 class Wikipedia:
