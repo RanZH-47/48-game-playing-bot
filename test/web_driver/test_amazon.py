@@ -2,8 +2,6 @@
 # test case 1: find price
 # test case 2: find css yellow
 # test case 3: find a href link
-import pytest
-
 import constants
 from web_driver.amazon import Amazon
 
