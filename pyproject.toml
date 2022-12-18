@@ -18,6 +18,7 @@ isort = "^5.11.3"
 flake8 = "^6.0.0"
 bandit = "^1.7.4"
 safety = "^2.3.5"
+selenium = "^4.7.2"
 
 [build-system]
 requires = ["poetry-core"]
