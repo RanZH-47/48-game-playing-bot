@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "An automated cookie picker."
 authors = ["RoastedCookie"]
 readme = "README.md"
-packages = [{include = "cookie_picker"}]
+packages = [{include = "web_driver"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
